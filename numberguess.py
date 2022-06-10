@@ -25,4 +25,3 @@ while True:
     else:
         attempts += 1
         print("YOU GUESSED LOWER TRY AGAIN")
-		print("Test")

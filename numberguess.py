@@ -15,7 +15,9 @@ number = randint(1, 10)
 while True:
     guess = int(input("Guess a number between 1 and 10: "))
     if guess == number:
-        print(f"You guessed correctly it was {number} and it took you {attempts} attempts")
+        print(
+            f"You guessed correctly it was {number} and it took you {attempts} attempts"
+        )
         break
     elif guess > number:
         attempts += 1
@@ -23,4 +25,3 @@ while True:
     else:
         attempts += 1
         print("YOU GUESSED LOWER TRY AGAIN")
-

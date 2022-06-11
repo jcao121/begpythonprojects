@@ -19,9 +19,12 @@ while True:
             f"You guessed correctly it was {number} and it took you {attempts} attempts"
         )
         break
-    elif guess > number:
-        attempts += 1
-        print("YOU GUESSED HIGHER TRY AGAIN")
-    else:
+    elif guess < number:
         attempts += 1
         print("YOU GUESSED LOWER TRY AGAIN")
+    elif guess > 10:
+        attempts += 1
+        print("You guessed a number higher then 10... Try again..")
+    else:
+        attempts += 1
+        print("YOU GUESSED HIGHER TRY AGAIN")

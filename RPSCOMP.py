@@ -1,4 +1,5 @@
 from random import choice
+
 player1_score = 0
 comp_score = 0
 options = ["rock", "paper", "scissors"]
@@ -23,4 +24,3 @@ while player1_score != 3 and comp_score != 3:
     else:
         comp_score += 1
         print(f"COMPUTER WON AND HAS {comp_score} point")
-

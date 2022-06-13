@@ -1,5 +1,5 @@
-# TODO: uppercase first letter of first_name, figure out how the attack system will work, attack needs to keep changing, add sleep()
-# FIXME: smaughp drops to negative, i want it to end as soon as its 0, need to find a way, need to dummy proof program also and add sleep to make it more of a dialoge
+# TODO: figure out how the attack system will work, attack needs to keep changing
+# FIXME: smaughp drops to negative, i want it to end as soon as its 0, need to find a way, need to dummy proof program
 from time import sleep
 from random import randint
 
@@ -7,7 +7,7 @@ weapons = ["sword", "axe", "spear"]
 game_state = ""
 health = 100
 while game_state != "over":
-    first_name = input("What is your first name? ")
+    first_name = input("What is your first name? ").capitalize()
     if first_name != "":
         print(
             f"Is it a pleasure to meet you {first_name}, My name is Gandolf The Grey, Let's get you out of The Shire. "
@@ -58,7 +58,7 @@ while game_state != "over":
             ):  # had an error where when smaug hp was perfect 0 it would keep looping, very important to use <= or >=
                 game_state = "over"
                 print(
-                    "You have defeated SMAUG, you beg Gandolf to take you back to The Shire and your adventure ends here..."
+                    "You have defeated Smaug The Dragon!, you beg Gandolf to take you back to The Shire and your adventure ends here..."
                 )
             else:
                 continue

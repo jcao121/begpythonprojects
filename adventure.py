@@ -18,6 +18,7 @@ while game_state != "over":
         print(
             "If we are going on an adventure we need a weapon in case something goes wrong, would you like a Sword, Axe or Spear?"
         )
+        sleep(1)
         weapon = input("Choose your WEAPON: ").lower()
         while weapon not in weapons:
             weapon = input(
@@ -36,7 +37,6 @@ while game_state != "over":
     sleep(1)
     print("After half a day of traveling you and Gandolf run into Smaug The Dragon!")
     sleep(1)
-
     smaughp = 25
     while smaughp > 0:
         fight_response = input("What do you DO? Enter: Fight or Run? ").lower()
@@ -58,16 +58,6 @@ while game_state != "over":
                 print(f"Smaug retaliates and hits you for {smaugattack} damage")
                 health -= smaugattack
                 print(f"You have {health} amount of HP left")
-            # if (
-            #     smaughp <= 0
-            # ):  # had an error where when smaug hp was perfect 0 it would keep looping, very important to use <= or >=
-            #     smaughp += 0
-            #     game_state = "over"
-            #     print(
-            #         "You have defeated Smaug The Dragon!, you beg Gandolf to take you back to The Shire and your adventure ends here..."
-            #     )
-            # else:
-            #     continue
         elif fight_response == "run":
             game_state = "over"
             print(

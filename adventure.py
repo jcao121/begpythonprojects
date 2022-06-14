@@ -61,6 +61,6 @@ while game_state != "over":
         elif fight_response == "run":
             game_state = "over"
             print(
-                "You tried to flee and smaug burned you with his flame breath, YOU DIED!"
+                "You tried to run and Smaug burned you into ashes with his flame breath, YOU DIED!"
             )
             break

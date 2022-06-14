@@ -1,5 +1,3 @@
-# TODO: figure out how the attack system will work, attack needs to keep changing
-# FIXME: smaughp drops to negative, i want it to end as soon as its 0, need to find a way, need to dummy proof program
 from time import sleep
 from random import randint
 
@@ -15,10 +13,8 @@ while game_state != "over":
     else:
         continue
     sleep(1)
-    playing = input("Do you want to go on an adventure? ").lower()[0]
-    if playing == "":  # FIXME: NEED TO FIX ERROR IF U DONT ENTER ANYTHING
-        continue
-    elif playing == "y":
+    playing = input("Do you want to go on an adventure? Enter Yes or No: ").lower()[0]
+    if playing == "y":
         print(
             "If we are going on an adventure we need a weapon in case something goes wrong, would you like a Sword, Axe or Spear?"
         )
@@ -49,19 +45,29 @@ while game_state != "over":
             smaugattack = randint(0, 8)
             print(f"You attacked Smaug and it did {attack} damage")
             smaughp -= attack
-            print(f"Smaug has {smaughp} HP left")
-            print(f"Smaug retaliates and hits you for {smaugattack} damage")
-            health -= smaugattack
-            print(f"You have {health} amount of HP left")
-            if (
-                smaughp <= 0
-            ):  # had an error where when smaug hp was perfect 0 it would keep looping, very important to use <= or >=
-                game_state = "over"
+            if attack >= smaughp and smaughp <= 0:
+                smaughp = +0
+                print(f"Smaug has {smaughp} HP left")
                 print(
                     "You have defeated Smaug The Dragon!, you beg Gandolf to take you back to The Shire and your adventure ends here..."
                 )
+                game_state = "over"
+                break
             else:
-                continue
+                print(f"Smaug has {smaughp} HP left")
+                print(f"Smaug retaliates and hits you for {smaugattack} damage")
+                health -= smaugattack
+                print(f"You have {health} amount of HP left")
+            # if (
+            #     smaughp <= 0
+            # ):  # had an error where when smaug hp was perfect 0 it would keep looping, very important to use <= or >=
+            #     smaughp += 0
+            #     game_state = "over"
+            #     print(
+            #         "You have defeated Smaug The Dragon!, you beg Gandolf to take you back to The Shire and your adventure ends here..."
+            #     )
+            # else:
+            #     continue
         elif fight_response == "run":
             game_state = "over"
             print(
